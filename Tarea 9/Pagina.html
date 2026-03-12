@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+      <div class="estrellas"></div>
+<form>
+
+<fieldset>
+
+<legend>Datos personales</legend>
+
+<label for="nombre">Nombre y apellidos</label>
+<div class="campo">
+<span>👤</span>
+<input id="nombre" type="text">
+</div>
+
+<label for="sexo">Sexo: </label>
+<select id="sexo">
+    <!--Etiqueta option-->
+    <option value="value1">Hombre</option>
+    <option value="value2" selected>Mujer</option>
+</select><br><br>
+
+<label>Edad:</label>
+
+<div class="edad">
+<label><input type="checkbox" value="20-39"> 20-39</label>
+
+<label><input type="checkbox" value="40-59"> 40-59</label>
+
+<label><input type="checkbox" value="60-79"> 60-79</label>
+</div> 
+<br><br>
+
+<label for="email">Email</label>
+<div class="campo">
+<span>✉️</span>
+<input id="email" type="email">
+</div>
+
+<label for="estudios">Estudios: </label>
+<select id="estudios">
+
+<optgroup label="Estudios Universitarios">
+<option>Doctorado</option>
+<option>Máster</option>
+<option>Grado</option>
+</optgroup>
+
+<optgroup label="Ciclo Formativo">
+<option>Grado Superior</option>
+<option>Grado Medio</option>
+</optgroup>
+
+</select><br><br>
+
+<label for="navegador">Elige tu navegador favorito: </label>
+<input id="navegador" list="browsers">
+
+<datalist id="browsers">
+<option value="Chrome">
+<option value="Firefox">
+<option value="Internet Explorer">
+<option value="Opera">
+<option value="Safari">
+<option value="Microsoft Edge">
+</datalist>
+
+<br><br>
+<label for="mensaje">Mensaje</label>
+<div class="campo">
+<span>💬</span>
+<textarea id="mensaje" rows="2" placeholder="Mensaje"></textarea>
+</div>
+
+</div>
+
+</fieldset>
+
+<input type="submit" value="Enviar" id="botonEnviar">
+
+<p id="mensajeEnviado">Formulario enviado correctamente ✅</p>
+
+<script>
+
+document.querySelector("form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let boton = document.getElementById("botonEnviar");
+
+boton.value="Enviando...";
+
+setTimeout(function(){
+
+boton.value="Enviado ✔";
+
+document.getElementById("mensajeEnviado").style.display="block";
+
+},1500);
+
+});
+
+</script>
+
+</form>
+
+
+
+
+</body>
+</html>
